@@ -1,4 +1,4 @@
-package sample;
+package StudentManagementSystem;
 
 /**
  * @author      Edson Zhu <efkzhu @ myseneca.ca>
