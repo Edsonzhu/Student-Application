@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+    <Text layoutX="25.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filename:" wrappingWidth="199.455078125">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="25.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="25.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course:">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Text>
+    <Text layoutX="25.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade:">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Text>
+    <Button id="load" fx:id="loadB" layoutX="104.0" layoutY="122.0" mnemonicParsing="false" onAction="#loadStudent" text="Load" />
+    <Button id="save" fx:id="saveB" layoutX="163.0" layoutY="122.0" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+    <Button id="new" fx:id="newB" layoutX="26.0" layoutY="284.0" mnemonicParsing="false" onAction="#newStudent" text="New" />
+    <Button id="edit" fx:id="editB" layoutX="113.0" layoutY="284.0" mnemonicParsing="false" onAction="#editStudent" text="Edit" />
+    <Button id="delete" fx:id="deleteB" layoutX="291.0" layoutY="284.0" mnemonicParsing="false" onAction="#deleteStudent" text="Delete" />
+    <TextField id="filenamefield" fx:id="fileName" layoutX="104.0" layoutY="81.0" prefHeight="25.0" prefWidth="169.0" />
+    <TextField id="namefield" fx:id="name" layoutX="104.0" layoutY="163.0" prefHeight="25.0" prefWidth="169.0" />
+    <TextField id="coursefield" fx:id="course" layoutX="104.0" layoutY="204.0" prefHeight="25.0" prefWidth="169.0" />
+    <TextField id="gradefield" fx:id="grade" layoutX="104.0" layoutY="245.0" prefHeight="25.0" prefWidth="71.0" />
+    <Text fill="#f50101" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Application" textAlignment="CENTER" wrappingWidth="684.13671875">
+        <font>
+            <Font name="Bernard MT Condensed" size="34.0" />
+        </font>
+    </Text>
+   <TextArea fx:id="outputText" layoutX="27.0" layoutY="322.0" prefHeight="66.0" prefWidth="634.0" />
+   <TableView fx:id="tabView" editable="true" layoutX="359.0" layoutY="79.0" prefHeight="227.0" prefWidth="300.0">
+     <columns>
+         <TableColumn fx:id="stdId" editable="false" prefWidth="41.0" text="ID" />
+         <TableColumn fx:id="stdName" onEditCommit="#editColName" prefWidth="115.0" text="Name" />
+         <TableColumn fx:id="stdCourse" onEditCommit="#editColCourse" prefWidth="84.0" text="Course" />
+         <TableColumn fx:id="stdGrade" onEditCommit="#editColGrade" prefWidth="60.0" text="Grade" />
+     </columns>
+   </TableView>
+   <Button layoutX="205.0" layoutY="284.0" mnemonicParsing="false" onAction="#addStudent" text="Add" />
+   <Button layoutX="294.0" layoutY="80.0" mnemonicParsing="false" onAction="#chooseFile" text="Open" />
+   <Button fx:id="deleteFile" layoutX="221.0" layoutY="122.0" mnemonicParsing="false" text="Delete" />
+</AnchorPane>
